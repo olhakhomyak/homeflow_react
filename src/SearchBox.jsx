@@ -1,11 +1,18 @@
 import { FaSearch } from 'react-icons/fa';
 
-function SearchBox() {
+function SearchBox({ searchQuery, handleChangeQuery }) {
   return (
     <div className="mt-5 relative">
-      <input placeholder="Enter a search term" className="px-5 py-3 border-gray-400 border rounded w-full" />
-
-      <FaSearch className="absolute top-3.5 right-3.5 text-gray-400" size={20} />
+      <input
+        onChange={handleChangeQuery}
+        value={searchQuery}
+        placeholder="Enter a search term"
+        className="px-5 py-3 border-gray-400 border rounded w-full"
+      />
+      <FaSearch
+        className="absolute top-3.5 right-3.5 text-gray-400"
+        size={20}
+      />
     </div>
   );
 };
